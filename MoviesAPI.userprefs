@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{CF51F2EF-0847-493D-B525-490AFCFA04F9}|Default">
+  <MonoDevelop.Ide.ItemProperties.MoviesAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MoviesAPI/Controllers/MoviesController.cs">
+    <Files>
+      <File FileName="MoviesAPI/Controllers/MoviesController.cs" Line="24" Column="40" NotebookId="1" />
+      <File FileName="MoviesAPI/Models/DBinitialize.cs" Line="12" Column="91" NotebookId="1" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1692" Y="85" Width="820" Height="711">
+        <Files>
+          <File FileName="MoviesAPI/Controllers/ValuesController.cs" Line="12" Column="9" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/christopherwilliams/Projects/dot-net-apps/movies-api/MoviesAPI/Models/SeedData.cs" relfile="MoviesAPI/Models/SeedData.cs" line="10" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
