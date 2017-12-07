@@ -1,14 +1,18 @@
 ﻿<Properties StartupConfiguration="{CF51F2EF-0847-493D-B525-490AFCFA04F9}|Default">
   <MonoDevelop.Ide.ItemProperties.MoviesAPI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MoviesAPI/Controllers/MoviesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MoviesAPI/Program.cs">
     <Files>
-      <File FileName="MoviesAPI/Controllers/MoviesController.cs" Line="24" Column="40" NotebookId="1" />
+      <File FileName="MoviesAPI/Controllers/MoviesController.cs" Line="41" Column="33" NotebookId="1" />
       <File FileName="MoviesAPI/Models/DBinitialize.cs" Line="12" Column="91" NotebookId="1" />
+      <File FileName="MoviesAPI/Startup.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MoviesAPI/Program.cs" Line="7" Column="36" NotebookId="1" />
+      <File FileName="MoviesAPI/appsettings.json" Line="1" Column="1" NotebookId="1" />
+      <File FileName="MoviesAPI/appsettings.Development.json" Line="1" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="1692" Y="85" Width="820" Height="711">
+      <FloatingWindow WindowId="1" X="1692" Y="63" Width="820" Height="711">
         <Files>
-          <File FileName="MoviesAPI/Controllers/ValuesController.cs" Line="12" Column="9" />
+          <File FileName="MoviesAPI/Controllers/ValuesController.cs" Line="19" Column="9" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
