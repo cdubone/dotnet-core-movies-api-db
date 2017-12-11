@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Models;
 
 namespace MoviesAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/movies")]
     public class MoviesController : Controller
     {
         private readonly MoviesAPIContext _context;
@@ -19,39 +19,86 @@ namespace MoviesAPI.Controllers
             _context = context;    
         }
 
-        // GET api/movies
-        [HttpGet]
-        public IEnumerable<Movie> Get()
-        {
-            //// Use LINQ to get list of genres.
-            //IQueryable<string> genreQuery = from m in _context.Movie
-                                            //orderby m.Genre
-                                            //select m.Genre;
 
+        [HttpGet()]
+        public IActionResult GetMovies()
+        {
             var movies = from m in _context.Movie
                          select m;
 
-            return movies;
+            return new JsonResult(movies);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetMovie(int id)
+        {
+            var movie = _context.Movie.FirstOrDefault(m => m.ID == id);
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(movie);
+        }
+
+        [HttpPost()]
+        public ActionResult CreateMovie([FromBody] Movie movie)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _context.Add(movie);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpPatch("{id}")]
+        public IActionResult PartiallyUpdateMovie(int id, [FromBody] JsonPatchDocument<Movie> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
+
+            return NoContent();
+        }
+
+
+        // GET api/movies
+        //[HttpGet]
+        //public IEnumerable<Movie> Get()
+        //{
+        //    //// Use LINQ to get list of genres.
+        //    //IQueryable<string> genreQuery = from m in _context.Movie
+        //                                    //orderby m.Genre
+        //                                    //select m.Genre;
+
+        //    var movies = from m in _context.Movie
+        //                 select m;
+
+        //    return movies;
+        //}
 
         // GET api/movies/5
-        [HttpGet("{id}")]
-        public Movie Get(int id)
-        {
-            //if (id == null)
-            //{
-            //    return NotFound();
-            //}
+        //[HttpGet("{id}")]
+        //public Movie Get(int id)
+        //{
+        //    //if (id == null)
+        //    //{
+        //    //    return NotFound();
+        //    //}
 
-            var movie = _context.Movie
-                .SingleOrDefault(m => m.ID == id);
-            //if (movie == null)
-            //{
-            //    return NotFound();
-            //}
+        //    var movie = _context.Movie
+        //        .SingleOrDefault(m => m.ID == id);
+        //    //if (movie == null)
+        //    //{
+        //    //    return NotFound();
+        //    //}
 
-            return movie;
-        }
+        //    return movie;
+        //}
 
         //// GET: Movies
         //// Requires using Microsoft.AspNetCore.Mvc.Rendering;
